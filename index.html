@@ -17,10 +17,10 @@
 
 ----如果实习生也算的话
 
-[沉睡]&lt;continue|
+[(text-colour:grey)[沉睡]]&lt;continue|
 
 (click-replace:?continue)[你开始怀念小镇日复一日宛如诅咒的日子----至少不用像现在这样   
-[沉睡]&lt;continue2|
+[(text-colour:grey)[沉睡]]&lt;continue2|
 ]
 
 (click-replace:?continue2)[
@@ -29,7 +29,7 @@
 你睡了多久？
 
 不得而知 
-[········]&lt;continue3|]
+[(text-colour:red)[········]]&lt;continue3|]
 
 (click-replace:?continue3)[
 一阵争吵声将你吵醒
@@ -37,6 +37,13 @@
 [[苏醒]] ]
 
 
+ (if:$san &lt; 100)[话说···还是很困啊···
+ (link:&quot;[继续睡]&quot;)[(display:none)[(goto:&quot;深层梦境&quot;)]]]
+ 
+ 
+ 
+ 
+ 
  
  </tw-passagedata><tw-passagedata pid="2" name="苏醒" tags="" position="750,250" size="100,100">你迷迷糊糊之时，一阵争吵声将你拉回现实
 
@@ -56,12 +63,16 @@
 
 {
 (set:$hl_love to 0)
+}
+
+{
+(set:$san to 100)
 }</tw-passagedata><tw-passagedata pid="4" name="测试" tags="" position="750,50" size="100,100">$wl_love
 
 
 $hl_love
 
-</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，前去劝架" tags="" position="900,175" size="100,100">你掀开帐篷帘，意外发现争吵者中有熟面孔-----威龙
+</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，前去劝架" tags="" position="875,175" size="100,100">你掀开帐篷帘，意外发现争吵者中有熟面孔-----威龙
 
 （目前威龙好感：(text-colour:(hsl:90,0.8039,0.5,0.85))[$wl_love ]）
 
@@ -82,7 +93,7 @@ $hl_love
 
 至于为什么会这么累······
 
-[回想]&lt;continue|
+[(text-colour:grey)[回想]]&lt;continue|
 
 (click-replace:?continue)[是前一天，还是更多天前的事了吧
 睡意蚕食大脑，你已无力思考更多
@@ -91,7 +102,9 @@ $hl_love
 
 [[梦境]] ]
 
-</tw-passagedata><tw-passagedata pid="7" name="梦境" tags="" position="925,525" size="100,100">梦里是鲜艳的蓝天，小镇的大家都笑着向你打招呼
+</tw-passagedata><tw-passagedata pid="7" name="梦境" tags="" position="875,500" size="100,100">(text-size:3)[梦]
+
+梦里是鲜艳的蓝天，小镇的大家都笑着向你打招呼
 
 母亲在你的左边，父亲在另一边，你小小的手被两只大手包裹
 
@@ -99,7 +112,7 @@ $hl_love
 
 (text-colour:(hsl:0,0,1,0.85))+(bg:(gradient: 0, 0,#ffffff,0,#e61919,1,#ffffff))[罗伊·斯米，你的人生该是这样的]
 
-[是这样吗？]&lt;continue|
+[(text-colour:yellow)[是这样吗？]]&lt;continue|
 
 (click-replace:?continue)[永远温暖，永远幸福
 你在这个世界中心，所有人喜欢你，所有人爱戴你
@@ -110,7 +123,9 @@ $hl_love
 
 你拥有了完美人生
 
-[[回到开始]] ]</tw-passagedata><tw-passagedata pid="8" name="帮威龙说话" tags="" position="1075,100" size="100,100">(set:$wl_love to it + 5)
+[[回到开始]] ]
+
+(set:$san to it -50)</tw-passagedata><tw-passagedata pid="8" name="帮威龙说话" tags="" position="1050,100" size="100,100">(set:$wl_love to it + 5)
 
 “有话好好说啊二位”
 
@@ -141,7 +156,90 @@ $hl_love
 (目前威龙好感:$wl_love)
 (set:$hl_love to it -5)
 (目前红狼好感：$hl_love) 
-]</tw-passagedata><tw-passagedata pid="9" name="帮红狼说话" tags="" position="1075,275" size="100,100"></tw-passagedata><tw-passagedata pid="10" name="询问威龙发生了什么" tags="" position="1200,50" size="100,100"></tw-passagedata></tw-storydata>
+]
+
+</tw-passagedata><tw-passagedata pid="9" name="帮红狼说话" tags="" position="1050,300" size="100,100">(set:$wl_love to it + 3)
+
+&quot;有话好好讲嘛，非得动手干嘛&quot;
+
+你轻拍红狼扯着威龙衣领的手，对方扫你一眼，你猜对方应该是看出你(text-colour:grey)[难民]身份，配合着你的动作收回手，转而双手抱胸看着你，眉宇间还有未消的怒意
+
+[继续]&lt;continue|
+
+(click-replace:?continue)[你转头，拍拍威龙的肩膀
+
+&quot;冷静点，和上校好好谈谈嘛&quot;
+
+上校
+
+你有些诧异自己脱口而出的军衔
+
+在此之前，你应该从未见过这位红狼上校
+
+&quot;哼&quot;你看见对方皱起了眉头，显然对方并没有领会你的好意，也许是把你当成了妄图攀上大腿投机取巧的小人
+
+红狼转身离去
+
+[[询问威龙]] 
+
+(目前威龙好感:$wl_love)
+(set:$hl_love to it-2)
+(目前红狼好感:$hl_love)] </tw-passagedata><tw-passagedata pid="10" name="询问威龙发生了什么" tags="" position="1200,50" size="100,100">威龙努努嘴，好哥俩似的揽住你的肩，你有些站不稳，晃了一个踉跄
+
+威龙扶了你一把
+
+&quot;还能什么事&quot;威龙的声音从头顶传来，&quot;药物又见底了，总部那边不知道怎么回事，一直不给批下来&quot;
+
+威龙还带着面罩，你的角度看不清他的表情，不过听语气也知道不会有什么好脸色
+
+&quot;我说可以派人去镇子那—你和我说过那还有能应急的药物。但是··红狼他说战况不是很好，不要浪费多余人员去为了不知道真假的消息？！&quot;
+
+&quot;嘿，冷静点伙计&quot;威龙的情绪不太对，你适时开口转移话题&quot;深呼吸—毕竟我也只知道那之前是备着药的，现在也不知道是不是完好的&quot;
+
+&quot;可是已经有人要撑不住了&quot;威龙的语气染上失落
+
+[安抚]&lt;continue|
+(click-replace:?continue)[你轻拍着威龙的背，努力忽视愈发浓烈的令人作呕的硝烟味
+
+你们又聊了一些有的没的，最后是有士兵来招呼威龙训练才结束这场聊天
+
+你看着威龙的身影逐渐消失
+
+药物吗······
+
+[[冒险只身前往镇子]] 
+
+
+[[还是先睡一觉再说]] ]
+
+
+ 
+</tw-passagedata><tw-passagedata pid="11" name="冒险只身前往镇子" tags="" position="1425,50" size="100,100"></tw-passagedata><tw-passagedata pid="12" name="还是先睡一觉再说" tags="" position="1450,300" size="100,100"></tw-passagedata><tw-passagedata pid="13" name="询问威龙" tags="" position="1225,325" size="100,100">威龙似乎不太想再提这个话题，你干脆陪他唠唠嗑
+
+毕竟在这里，最先崩溃的不会是身体
+
+而是(text-colour:grey)[精神]
+
+天色渐晚，威龙被士兵叫走训练，你终于从浓厚的硝烟味中解放出来
+
+尽管威龙有意无意避开这个话题，但你还是从只言片语中猜到了二人因何而争吵
+
+——药
+
+[[冒险只身前往镇子]] 
+
+[[还是先睡一觉再说]]</tw-passagedata><tw-passagedata pid="14" name="深层梦境" tags="" position="650,450" size="100,100">
+要沉浸在永恒的幸福中吗？
+
+(link-replace:&quot;罗伊·斯米&quot;)[(text-colour:red)[蜂医]
+
+(link-repeat:&quot;(text-colour:red)[快醒来]&quot;)[(set:$san to it -10)(if:$san&lt;10)[(link:&quot;惊醒&quot;)][(display:done)[(goto:&quot;再次醒来&quot;)]]]]</tw-passagedata><tw-passagedata pid="15" name="再次醒来" tags="" position="1025,475" size="100,100">争吵仍在继续
+
+你的睡意已全数消散
+
+看来得找点事做了
+
+(link:&quot;去劝架&quot;)[(display:done)[(goto:&quot;为了安稳的睡眠，前去劝架&quot;)]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
