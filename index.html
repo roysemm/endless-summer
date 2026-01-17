@@ -314,7 +314,7 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 [[前去看看]]
 
-[[拿药要紧]]</tw-passagedata><tw-passagedata pid="18" name="走大路" tags="" position="1600,0" size="100,100">站岗的士兵看了你一眼，面罩遮住了他大半张脸，你看不起他的表情
+(if:$san is 80)[(link-goto:&quot;拿药要紧&quot;)]</tw-passagedata><tw-passagedata pid="18" name="走大路" tags="" position="1600,0" size="100,100">站岗的士兵看了你一眼，面罩遮住了他大半张脸，你看不起他的表情
 
 不过应该是庆幸吧。你嘴角扯出一个自嘲的笑
 
@@ -334,9 +334,7 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 你拿上了药物
 
-[[回军营]](set:$san to it -10)]]</tw-passagedata><tw-passagedata pid="19" name="呕吐昏迷" tags="blue" position="1450,400" size="100,100">一夜无梦
-
-&quot;呃········&quot;
+[[回军营]](set:$san to it -10)]]</tw-passagedata><tw-passagedata pid="19" name="呕吐昏迷" tags="blue" position="1450,400" size="100,100">&quot;呃········&quot;
 
 你渐渐恢复意识，嘴里若有若无的腥甜味刺激着你脆弱的神经
 
@@ -355,7 +353,7 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 至少为了自己好过些，你不得不去找些止痛药
 
 (link-reveal-goto:&quot;出发&quot;,&quot;走小路&quot;)[(set:$san to 80)]
-</tw-passagedata><tw-passagedata pid="21" name="回军营" tags="" position="1750,0" size="100,100"></tw-passagedata><tw-passagedata pid="22" name="前去看看" tags="wm" position="1750,175" size="100,100">越靠近那片草丛血腥味就更浓
+</tw-passagedata><tw-passagedata pid="21" name="回军营" tags="" position="1800,0" size="100,100"></tw-passagedata><tw-passagedata pid="22" name="前去看看" tags="wm" position="1750,175" size="100,100">越靠近那片草丛血腥味就更浓
 
 你心中隐隐有了不好的预感
 
@@ -368,15 +366,59 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 (link-goto:&quot;帮助他&quot;,&quot;救助&quot;)
 
-(link-reveal-goto:&quot;离去&quot;,&quot;无名敌对线&quot;)[(set:$wm_love to it -100)]]</tw-passagedata><tw-passagedata pid="23" name="拿药要紧" tags="" position="1750,350" size="100,100"></tw-passagedata><tw-passagedata pid="24" name="救助" tags="wm" position="1875,125" size="100,100">你努力忽视萦绕在鼻尖的血腥味，为伤者简单处理了伤口
+(link-reveal-goto:&quot;离去&quot;,&quot;无名敌对线&quot;)[(set:$wm_love to it -100)]]</tw-passagedata><tw-passagedata pid="23" name="拿药要紧" tags="" position="1750,400" size="100,100">那股血腥味持续攻击着你的大脑
 
-说是处理，其实也只是用布料为他进行止血罢了</tw-passagedata><tw-passagedata pid="25" name="无名敌对线" tags="" position="1875,275" size="100,100">ps：选择此项后将开启无名敌对线，如此你还要继续吗
+你的本能在叫嚣离开这块地方
+
+你跌跌撞撞，几次差点被绊倒，眼前被刺鼻的味道熏得发黑
+
+也许是在奔跑途中吸入了过多的烟尘，你的视线逐渐模糊，视野变成一片雪白
+
+(link-reveal-goto:&quot;努力睁眼&quot;,&quot;睁眼&quot;)[(set:$san to it -20)]</tw-passagedata><tw-passagedata pid="24" name="救助" tags="wm" position="1850,175" size="100,100">(if:$san is 80)[你努力忽视萦绕在鼻尖的血腥味，为伤者简单处理了伤口
+
+说是处理，其实也只是用布料为他进行止血罢了
+
+胃部又一阵痉挛
+
+你死死咬住舌尖，直到一丝铁锈味充斥在你的口腔
+
+你清醒了一点
+
+至少不会让这里再多出一个倒下的人
+
+[[拖着士兵寻找稍微干净点的地方]]]
+
+(else-if:$san is 70)[血腥味淡了点，那人带着一身伤离去，只留下一滩干涸的血迹证明你抛弃了一名伤者
+
+这违背了你的初心
+
+(link:&quot;(text-colour:yellow)[········]&quot;)[
+咦？
+
+你学医是为了什么吗？
+(text-style:&quot;blurrier&quot;)为了他人不再痛苦
+话说，你什么时候学习了这些
+(text-style:&quot;blurrier&quot;)我想救更多人
+
+(link-goto:&quot;回神&quot;,&quot;回军营&quot;)]]
+
+(else-if:$san is 100)[你努力忽视萦绕在鼻尖的血腥味，为伤者简单处理了伤口
+
+说是处理，其实也只是用布料为他进行止血罢了
+
+这种程度的伤仅凭最基础的包扎是治不好的
+
+你将希望放在了药店上
+
+希望它还是完好的
+
+[[前往药店]]]</tw-passagedata><tw-passagedata pid="25" name="无名敌对线" tags="" position="1750,275" size="100,100">ps：选择此项后将开启无名敌对线，如此你还要继续吗
 
 
 (link-reveal-goto:&quot;补药哇我要看甜甜蛇蜂&quot;,&quot;前去看看&quot;)[(set:$wm_love to it +100)]
 
 
-(link-goto:&quot;我就要看血流成河ԅ(¯﹃¯ԅ)&quot;,&quot;离开&quot;)</tw-passagedata><tw-passagedata pid="26" name="离开" tags="" position="1975,275" size="100,100">逐渐弥漫的血腥味疯一般钻入你的鼻腔
+(link-goto:&quot;我就要看血流成河ԅ(¯﹃¯ԅ)&quot;,&quot;离开&quot;)</tw-passagedata><tw-passagedata pid="26" name="离开" tags="" position="1850,275" size="100,100">逐渐弥漫的血腥味疯一般钻入你的鼻腔
 
 你看出他战斗服上(text-colour:(hsl:90,0.8039,0.5,0.7))[哈夫克]的log
 
@@ -384,7 +426,57 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 也许是血液的味道过于刺鼻，或是在奔跑途中吸入了过多的烟尘，你的视线逐渐模糊，视野变成一片雪白
 
-(link-reveal-goto:&quot;努力睁眼&quot;,&quot;医务室&quot;)[(set:$san to it -30)]</tw-passagedata><tw-passagedata pid="27" name="医务室" tags="" position="2150,200" size="100,100"></tw-passagedata></tw-storydata>
+(link-goto:&quot;努力睁眼&quot;,&quot;睁眼&quot;)(set:$san to it -30)</tw-passagedata><tw-passagedata pid="27" name="睁眼" tags="" position="1975,350" size="100,100">(if:$san is 70)[你不知何时跑到了药店
+
+消毒水的味道让你的大脑短暂获得清明，后知后觉发现自己做了什么
+
+你抛下了一名伤者
+
+就算他是敌人
+
+可是，你是医生啊
+
+你试图(link-replace:&quot;安慰自己&quot;)[(text-colour:red)[逃避责任]
+
+········
+
+(text-style:&quot;blurrier&quot;)[罗伊·斯米就不会这样]
+
+(link-reveal-goto:&quot;拿完药回去&quot;,&quot;回军营&quot;)[(set:$san to it - 10)]]]
+
+(else-if:$san is 60)[胃部又开始痉挛
+
+你恍惚想起自己似乎有几天没有进食了，再加上刚刚受了刺激
+
+不过也好，你感到自己清醒了许多
+
+也让你认识到你刚刚做了什么
+
+(text-colour:red)[你抛弃了一名伤者]
+
+你咽下止疼药，靠在脱了皮的墙上大口喘气
+
+疼痛逐渐褪去
+
+愧疚带着一丝责任感席卷你脆弱的神经
+
+(link-reveal-goto:&quot;或许你该回去为他处理伤口&quot;,&quot;救助&quot;)[(set:$san to it + 10)]
+
+(link-reveal-goto:&quot;忽视异样，返回军营&quot;,&quot;回军营&quot;[(set:$san to it - 10)]]
+
+(else-if:$san &lt;=20)[你感到身体越来越沉重
+
+但你的灵魂越来越轻
+
+你看到罗伊·斯米摔倒在地，整个人如同虾米蜷缩着，双手死死捂着腹部
+
+其实也不是很痛
+
+(text-colour:grey)[那你为什么要哭呢]
+
+(link-goto:&quot;继续&quot;,&quot;呕吐昏迷&quot;]
+
+</tw-passagedata><tw-passagedata pid="28" name="拖着士兵寻找稍微干净点的地方" tags="wm" position="1975,200" size="100,100"></tw-passagedata><tw-passagedata pid="29" name="前往药店" tags="wm" position="1975,100" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
