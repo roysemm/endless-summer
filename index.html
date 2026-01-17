@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play 无尽夏.</tw-noscript></noscript></tw-story>
-<tw-storydata name="无尽夏" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="BF1C5596-2EA4-4A9A-9433-81886C185262" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="blue" color="blue"></tw-tag><tw-passagedata pid="1" name="回到开始" tags="" position="625,325" size="100,100">(text-colour:grey)[一场冗长的梦境········]
+<tw-storydata name="无尽夏" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="BF1C5596-2EA4-4A9A-9433-81886C185262" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="blue" color="blue"></tw-tag><tw-tag name="wm" color="green"></tw-tag><tw-tag name="--" color="green"></tw-tag><tw-passagedata pid="1" name="回到开始" tags="" position="625,325" size="100,100">(text-colour:grey)[一场冗长的梦境········]
 
 (set:$name to &quot;罗伊·斯米&quot;)
 
@@ -67,12 +67,23 @@
 
 {
 (set:$san to 100)
+}
+{
+(set:$wm_love to -10)
+}
+
+{
+(set:$sl_love to 10)
 }</tw-passagedata><tw-passagedata pid="4" name="测试" tags="" position="750,50" size="100,100">$wl_love
 
 
 $hl_love
 
-</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，前去劝架" tags="" position="875,175" size="100,100">你掀开帐篷帘，意外发现争吵者中有熟面孔-----威龙
+$san
+
+$wm_love
+
+$sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，前去劝架" tags="" position="875,175" size="100,100">你掀开帐篷帘，意外发现争吵者中有熟面孔-----威龙
 
 （目前威龙好感：(text-colour:(hsl:90,0.8039,0.5,0.85))[$wl_love ]）
 
@@ -236,7 +247,7 @@ $hl_love
 
 你感到反胃
 
-(if:$san is 50)[(link-goto:&quot;呕吐&quot;,&quot;呕吐昏迷&quot;)]
+(if:$san &lt;= 50)[(link-goto:&quot;呕吐&quot;,&quot;呕吐昏迷&quot;)]
 (else-if:$san is 100)[不过还好胃部痉挛的不算难以忍受，你捂着嘴慢慢爬到床上
 
 (link-goto:&quot;进入梦乡&quot;,&quot;第二天&quot;)]</tw-passagedata><tw-passagedata pid="13" name="询问威龙" tags="" position="1225,325" size="100,100">威龙似乎不太想再提这个话题，你干脆陪他唠唠嗑
@@ -255,7 +266,7 @@ $hl_love
 
 [[还是先睡一觉再说]]
 
-(if:$san&lt;=50)[(link-goto:&quot;(text-colour:(hsl:0,0.8039,0.5,0.45))[醒来]&quot;,&quot;醒来&quot;)]</tw-passagedata><tw-passagedata pid="14" name="深层梦境" tags="" position="750,450" size="100,100">
+(if:$san&lt;50)[(link-goto:&quot;(text-colour:(hsl:0,0.8039,0.5,0.45))[醒来]&quot;,&quot;醒来&quot;)]</tw-passagedata><tw-passagedata pid="14" name="深层梦境" tags="" position="750,450" size="100,100">
 要沉浸在永恒的幸福中吗？
 
 (link-replace:&quot;罗伊·斯米&quot;)[(text-colour:red)[蜂医]
@@ -285,7 +296,95 @@ $hl_love
 
 (text-style:&quot;blurrier&quot;)[或许]
 
-[[回到开始]][(set:$san to 100)(set:$wl_love to 50)(set:$hl_love to 0)] </tw-passagedata><tw-passagedata pid="17" name="走小路" tags="" position="1600,200" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="走大路" tags="" position="1600,0" size="100,100"></tw-passagedata><tw-passagedata pid="19" name="呕吐昏迷" tags="blue" position="1400,425" size="100,100">用于开启教官线</tw-passagedata><tw-passagedata pid="20" name="第二天" tags="" position="1575,325" size="100,100"></tw-passagedata></tw-storydata>
+[[回到开始]][(set:$san to 100)(set:$wl_love to 50)(set:$hl_love to 0)] </tw-passagedata><tw-passagedata pid="17" name="走小路" tags="" position="1600,200" size="100,100">你避开了所有人，迎着逐渐落下的夕阳走向树林中
+
+说实话你挺没把握，这条路你甚至没走过几次
+
+还都是小时候，饿得肚子难受，跑到这里乱摘果子吃
+
+这么想，你能活到现在也是个奇迹
+
+
+
+&quot;簌簌——&quot;
+
+一阵细微的响动引起了你的注意
+
+也许是小型野兽？
+
+[[前去看看]]
+
+[[拿药要紧]]</tw-passagedata><tw-passagedata pid="18" name="走大路" tags="" position="1600,0" size="100,100">站岗的士兵看了你一眼，面罩遮住了他大半张脸，你看不起他的表情
+
+不过应该是庆幸吧。你嘴角扯出一个自嘲的笑
+
+少了一张嘴、一个潜在的破绽，多了活下去的可能
+
+[往前走]&lt;continue|
+(click-replace:?continue)[离开军营，顺着较为平坦的地方一路向前
+
+你好久没有回家了，甚至对一路的风景感到陌生
+
+你默默将衣领往上拉了些，试图将漫天刺鼻的硝烟味隔开
+
+[寻找药店]&lt;continue2|
+(click-replace:?continue2)[让你惊喜的是药店的建筑竟然还算完整，甚至从里面隐隐传出的消毒水味冲淡了战争的味道
+
+白色，一大片一大片不正常的白，在一切蒙着灰的现在格格不入
+
+你拿上了药物
+
+[[回军营]](set:$san to it -10)]]</tw-passagedata><tw-passagedata pid="19" name="呕吐昏迷" tags="blue" position="1450,400" size="100,100">一夜无梦
+
+&quot;呃········&quot;
+
+你渐渐恢复意识，嘴里若有若无的腥甜味刺激着你脆弱的神经
+
+胃部空荡荡的，一些东西混着酸水被你吐了个精光
+
+陌生的天花板
+
+看来你被某人捡走了</tw-passagedata><tw-passagedata pid="20" name="第二天" tags="" position="1600,300" size="100,100">一夜无梦
+
+你感到(text-colour:(hsl:60,0.8039,0.5,0.7))[精神]好了许多，但反胃感仍没有消失
+
+你睁开眼，喉头、食道再到胃里都泛着火辣辣的痛
+
+你的身体并没有任何问题，甚至算得上健康
+
+至少为了自己好过些，你不得不去找些止痛药
+
+(link-reveal-goto:&quot;出发&quot;,&quot;走小路&quot;)[(set:$san to 80)]
+</tw-passagedata><tw-passagedata pid="21" name="回军营" tags="" position="1750,0" size="100,100"></tw-passagedata><tw-passagedata pid="22" name="前去看看" tags="wm" position="1750,175" size="100,100">越靠近那片草丛血腥味就更浓
+
+你心中隐隐有了不好的预感
+
+(link:&quot;拨开草丛&quot;)[
+一道漆黑的人影躺在地上，身上不断传来刺鼻的铁锈味
+
+那人似乎发现了你靠近的动作，喉间发出野兽般的&quot;嗬嗬&quot;声
+
+他需要救助
+
+(link-goto:&quot;帮助他&quot;,&quot;救助&quot;)
+
+(link-reveal-goto:&quot;离去&quot;,&quot;无名敌对线&quot;)[(set:$wm_love to it -100)]]</tw-passagedata><tw-passagedata pid="23" name="拿药要紧" tags="" position="1750,350" size="100,100"></tw-passagedata><tw-passagedata pid="24" name="救助" tags="wm" position="1875,125" size="100,100">你努力忽视萦绕在鼻尖的血腥味，为伤者简单处理了伤口
+
+说是处理，其实也只是用布料为他进行止血罢了</tw-passagedata><tw-passagedata pid="25" name="无名敌对线" tags="" position="1875,275" size="100,100">ps：选择此项后将开启无名敌对线，如此你还要继续吗
+
+
+(link-reveal-goto:&quot;补药哇我要看甜甜蛇蜂&quot;,&quot;前去看看&quot;)[(set:$wm_love to it +100)]
+
+
+(link-goto:&quot;我就要看血流成河ԅ(¯﹃¯ԅ)&quot;,&quot;离开&quot;)</tw-passagedata><tw-passagedata pid="26" name="离开" tags="" position="1975,275" size="100,100">逐渐弥漫的血腥味疯一般钻入你的鼻腔
+
+你看出他战斗服上(text-colour:(hsl:90,0.8039,0.5,0.7))[哈夫克]的log
+
+你在心底安慰自己，他是敌人，你不应该管他
+
+也许是血液的味道过于刺鼻，或是在奔跑途中吸入了过多的烟尘，你的视线逐渐模糊，视野变成一片雪白
+
+(link-reveal-goto:&quot;努力睁眼&quot;,&quot;医务室&quot;)[(set:$san to it -30)]</tw-passagedata><tw-passagedata pid="27" name="医务室" tags="" position="2150,200" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
