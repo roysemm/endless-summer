@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play 无尽夏.</tw-noscript></noscript></tw-story>
-<tw-storydata name="无尽夏" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="BF1C5596-2EA4-4A9A-9433-81886C185262" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="yellow"></tw-tag><tw-passagedata pid="1" name="回到开始" tags="" position="625,300" size="100,100">(text-colour:grey)[一场冗长的梦境········]
+<tw-storydata name="无尽夏" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="BF1C5596-2EA4-4A9A-9433-81886C185262" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="blue" color="blue"></tw-tag><tw-passagedata pid="1" name="回到开始" tags="" position="625,325" size="100,100">(text-colour:grey)[一场冗长的梦境········]
 
 (set:$name to &quot;罗伊·斯米&quot;)
 
@@ -87,7 +87,7 @@ $hl_love
 [[帮威龙说话]] 
 
 [[帮红狼说话]] ]
-</tw-passagedata><tw-passagedata pid="6" name="趁着睡意未消散，赶快睡个回笼觉" tags="" position="875,350" size="100,100">外面的争吵声愈发激烈，你浑不在意，将薄薄的毯子拉过头顶
+</tw-passagedata><tw-passagedata pid="6" name="趁着睡意未消散，赶快睡个回笼觉" tags="" position="850,350" size="100,100">外面的争吵声愈发激烈，你浑不在意，将薄薄的毯子拉过头顶
 
 你太累了，无论是昏沉的大脑还是酸软的四肢都需要得到休息
 
@@ -102,7 +102,7 @@ $hl_love
 
 [[梦境]] ]
 
-</tw-passagedata><tw-passagedata pid="7" name="梦境" tags="" position="875,500" size="100,100">(text-size:3)[梦]
+</tw-passagedata><tw-passagedata pid="7" name="梦境" tags="" position="850,450" size="100,100">(text-size:3)[梦]
 
 梦里是鲜艳的蓝天，小镇的大家都笑着向你打招呼
 
@@ -214,7 +214,32 @@ $hl_love
 
 
  
-</tw-passagedata><tw-passagedata pid="11" name="冒险只身前往镇子" tags="" position="1425,50" size="100,100"></tw-passagedata><tw-passagedata pid="12" name="还是先睡一觉再说" tags="" position="1450,300" size="100,100"></tw-passagedata><tw-passagedata pid="13" name="询问威龙" tags="" position="1225,325" size="100,100">威龙似乎不太想再提这个话题，你干脆陪他唠唠嗑
+</tw-passagedata><tw-passagedata pid="11" name="冒险只身前往镇子" tags="" position="1425,50" size="100,100">(text-colour:grey)[你不能坐视不管]
+
+你看到灰尘满天
+
+就冒险这一次吧
+
+你收拾好包袱，带着三块压缩饼干和一瓶纯净水出发了
+
+临出发前你又放下一块压缩饼干
+
+如果你没回来，少一张吃饭的嘴还是好的
+
+[[走小路]]
+
+[[走大路]]</tw-passagedata><tw-passagedata pid="12" name="还是先睡一觉再说" tags="blue" position="1450,300" size="100,100">问题解决，影响你睡眠的争吵已经结束了
+
+你并没有感到轻松
+
+鼻腔充斥着硝烟味
+
+你感到反胃
+
+(if:$san is 50)[(link-goto:&quot;呕吐&quot;,&quot;呕吐昏迷&quot;)]
+(else-if:$san is 100)[不过还好胃部痉挛的不算难以忍受，你捂着嘴慢慢爬到床上
+
+(link-goto:&quot;进入梦乡&quot;,&quot;第二天&quot;)]</tw-passagedata><tw-passagedata pid="13" name="询问威龙" tags="" position="1225,325" size="100,100">威龙似乎不太想再提这个话题，你干脆陪他唠唠嗑
 
 毕竟在这里，最先崩溃的不会是身体
 
@@ -228,18 +253,39 @@ $hl_love
 
 [[冒险只身前往镇子]] 
 
-[[还是先睡一觉再说]]</tw-passagedata><tw-passagedata pid="14" name="深层梦境" tags="" position="650,450" size="100,100">
+[[还是先睡一觉再说]]
+
+(if:$san&lt;=50)[(link-goto:&quot;(text-colour:(hsl:0,0.8039,0.5,0.45))[醒来]&quot;,&quot;醒来&quot;)]</tw-passagedata><tw-passagedata pid="14" name="深层梦境" tags="" position="750,450" size="100,100">
 要沉浸在永恒的幸福中吗？
 
 (link-replace:&quot;罗伊·斯米&quot;)[(text-colour:red)[蜂医]
 
-(link-repeat:&quot;(text-colour:red)[快醒来]&quot;)[(set:$san to it -10)(if:$san&lt;10)[(link:&quot;惊醒&quot;)][(display:done)[(goto:&quot;再次醒来&quot;)]]]]</tw-passagedata><tw-passagedata pid="15" name="再次醒来" tags="" position="1025,475" size="100,100">争吵仍在继续
+(link-repeat:&quot;(text-colour:red)[快醒来]&quot;)[(text-colour:red)[快醒来][(set:$san to it -10)](if:$san is 10)[
+(link-goto:&quot;惊醒&quot;,&quot;再次醒来&quot;)]]]</tw-passagedata><tw-passagedata pid="15" name="再次醒来" tags="" position="875,75" size="100,100">争吵仍在继续
 
 你的睡意已全数消散
 
 看来得找点事做了
 
-(link:&quot;去劝架&quot;)[(display:done)[(goto:&quot;为了安稳的睡眠，前去劝架&quot;)]]</tw-passagedata></tw-storydata>
+(link:&quot;去劝架&quot;)[(display:done)[(goto:&quot;为了安稳的睡眠，前去劝架&quot;)]]</tw-passagedata><tw-passagedata pid="16" name="醒来" tags="" position="1225,425" size="100,100">(size:2)[坏结局···吗？]
+
+罗伊·斯米的世界正在崩塌
+
+他不会再醒来了
+
+没有药物，没有战争，没有小镇
+
+也没有(text-style:&quot;shadow&quot;)[罗伊·斯米]
+
+
+
+你掌握的线索还不够
+
+探清谜底之后再睡一觉吧，你会感谢我的
+
+(text-style:&quot;blurrier&quot;)[或许]
+
+[[回到开始]][(set:$san to 100)(set:$wl_love to 50)(set:$hl_love to 0)] </tw-passagedata><tw-passagedata pid="17" name="走小路" tags="" position="1600,200" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="走大路" tags="" position="1600,0" size="100,100"></tw-passagedata><tw-passagedata pid="19" name="呕吐昏迷" tags="blue" position="1400,425" size="100,100">用于开启教官线</tw-passagedata><tw-passagedata pid="20" name="第二天" tags="" position="1575,325" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
