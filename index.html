@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play 无尽夏.</tw-noscript></noscript></tw-story>
-<tw-storydata name="无尽夏" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="BF1C5596-2EA4-4A9A-9433-81886C185262" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="blue" color="blue"></tw-tag><tw-tag name="wm" color="green"></tw-tag><tw-tag name="--" color="green"></tw-tag><tw-passagedata pid="1" name="回到开始" tags="" position="625,325" size="100,100">(text-colour:grey)[一场冗长的梦境········]
+<tw-storydata name="无尽夏" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="BF1C5596-2EA4-4A9A-9433-81886C185262" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="blue" color="blue"></tw-tag><tw-tag name="wm" color="green"></tw-tag><tw-tag name="--" color="green"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-passagedata pid="1" name="回到开始" tags="" position="625,325" size="100,100">(text-colour:grey)[一场冗长的梦境········]
 
 (set:$name to &quot;罗伊·斯米&quot;)
 
@@ -247,7 +247,7 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 你感到反胃
 
-(if:$san &lt;= 50)[(link-goto:&quot;呕吐&quot;,&quot;呕吐昏迷&quot;)]
+(if:$san &lt;= 50)[(link-reveal-goto:&quot;呕吐&quot;,&quot;呕吐昏迷&quot;)[(set:$sl to 1)]]
 (else-if:$san is 100)[不过还好胃部痉挛的不算难以忍受，你捂着嘴慢慢爬到床上
 
 (link-goto:&quot;进入梦乡&quot;,&quot;第二天&quot;)]</tw-passagedata><tw-passagedata pid="13" name="询问威龙" tags="" position="1225,325" size="100,100">威龙似乎不太想再提这个话题，你干脆陪他唠唠嗑
@@ -314,7 +314,9 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 [[前去看看]]
 
-(if:$san is 80)[(link-goto:&quot;拿药要紧&quot;)]</tw-passagedata><tw-passagedata pid="18" name="走大路" tags="" position="1600,0" size="100,100">站岗的士兵看了你一眼，面罩遮住了他大半张脸，你看不起他的表情
+(if:$san is 80)[(link-goto:&quot;拿药要紧&quot;)]
+
+(set:$wm to 1)</tw-passagedata><tw-passagedata pid="18" name="走大路" tags="" position="1600,0" size="100,100">站岗的士兵看了你一眼，面罩遮住了他大半张脸，你看不起他的表情
 
 不过应该是庆幸吧。你嘴角扯出一个自嘲的笑
 
@@ -342,7 +344,9 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 陌生的天花板
 
-看来你被某人捡走了</tw-passagedata><tw-passagedata pid="20" name="第二天" tags="" position="1600,300" size="100,100">一夜无梦
+看来你被某人捡走了
+
+</tw-passagedata><tw-passagedata pid="20" name="第二天" tags="" position="1600,300" size="100,100">一夜无梦
 
 你感到(text-colour:(hsl:60,0.8039,0.5,0.7))[精神]好了许多，但反胃感仍没有消失
 
@@ -511,7 +515,17 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 [[回军营]]]
 
 
-</tw-passagedata><tw-passagedata pid="28" name="拖着士兵寻找稍微干净点的地方" tags="wm" position="2175,225" size="100,100"></tw-passagedata><tw-passagedata pid="29" name="前往药店" tags="wm" position="2075,75" size="100,100"></tw-passagedata><tw-passagedata pid="30" name="回去看看" tags="" position="2150,350" size="100,100"></tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="28" name="拖着士兵寻找稍微干净点的地方" tags="wm" position="2150,200" size="100,100"></tw-passagedata><tw-passagedata pid="29" name="前往药店" tags="wm" position="2075,75" size="100,100"></tw-passagedata><tw-passagedata pid="30" name="回去看看" tags="wm" position="2150,350" size="100,100">那人还躺在那，看上去似乎伤的很重</tw-passagedata><tw-passagedata pid="31" name="侧边栏" tags="header" position="525,50" size="100,100">(replace:?sidebar)[(size:0.5)[(text-style:&quot;strike&quot;,&quot;blur&quot;)[¿﹠﹪]:$san
+
+威龙好感:$wl_love
+
+红狼好感:$hl_love
+
+(if:$sl is 1)[深蓝好感:$sl_love]
+
+(if:$wm is 1)[无名好感:$wm_love]]]
+
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
