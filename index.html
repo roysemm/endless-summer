@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play 无尽夏.</tw-noscript></noscript></tw-story>
-<tw-storydata name="无尽夏" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="BF1C5596-2EA4-4A9A-9433-81886C185262" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="blue" color="blue"></tw-tag><tw-tag name="wm" color="green"></tw-tag><tw-tag name="--" color="green"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-passagedata pid="1" name="回到开始" tags="" position="625,325" size="100,100">(text-colour:grey)[一场冗长的梦境········]
+<tw-storydata name="无尽夏" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="BF1C5596-2EA4-4A9A-9433-81886C185262" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="blue" color="blue"></tw-tag><tw-tag name="wm" color="green"></tw-tag><tw-tag name="--" color="green"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="hl" color="red"></tw-tag><tw-passagedata pid="1" name="回到开始" tags="" position="625,325" size="100,100">(text-colour:grey)[一场冗长的梦境········]
 
 (set:$name to &quot;罗伊·斯米&quot;)
 
@@ -37,8 +37,8 @@
 [[苏醒]] ]
 
 
- (if:$san &lt; 100)[话说···还是很困啊···
- (link:&quot;[继续睡]&quot;)[(display:none)[(goto:&quot;深层梦境&quot;)]]]
+(t8n:&quot;fade&quot;)+(t8n-delay:1s)[ (if:$san &lt; 100)[话说···还是很困啊···
+ (link:&quot;[继续睡]&quot;)[(display:none)[(goto:&quot;深层梦境&quot;)]]]]
  
  
  
@@ -266,7 +266,7 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 [[还是先睡一觉再说]]
 
-(if:$san&lt;50)[(link-goto:&quot;(text-colour:(hsl:0,0.8039,0.5,0.45))[醒来]&quot;,&quot;醒来&quot;)]</tw-passagedata><tw-passagedata pid="14" name="深层梦境" tags="" position="750,450" size="100,100">
+(t8n:&quot;fade&quot;)+(t8n-delay:0.5s)[(if:$san&lt;50)[(link-goto:&quot;(text-colour:(hsl:0,0.8039,0.5,0.45))[醒来]&quot;,&quot;醒来&quot;)]]</tw-passagedata><tw-passagedata pid="14" name="深层梦境" tags="" position="750,450" size="100,100">
 要沉浸在永恒的幸福中吗？
 
 (link-replace:&quot;罗伊·斯米&quot;)[(text-colour:red)[蜂医]
@@ -357,7 +357,7 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 至少为了自己好过些，你不得不去找些止痛药
 
 (link-reveal-goto:&quot;出发&quot;,&quot;走小路&quot;)[(set:$san to 80)]
-</tw-passagedata><tw-passagedata pid="21" name="回军营" tags="" position="1825,0" size="100,100">(if:$san is 60)[你抱着一些药物往回走，铁锈味仍在鼻尖萦绕，焦躁和莫名的愧疚笼罩着你
+</tw-passagedata><tw-passagedata pid="21" name="回军营" tags="hl" position="1825,0" size="100,100">(if:$san is 60)[你抱着一些药物往回走，铁锈味仍在鼻尖萦绕，焦躁和莫名的愧疚笼罩着你
 
 &quot;罗伊！&quot;
 
@@ -369,19 +369,45 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 &quot;罗伊！&quot;
 
-你听到有人叫你，抬起头对上威龙关急切的目光]
+你听到有人叫你，抬起头对上威龙急切的目光]
 
 (else-if:$san &lt; 50)[一切顺利的过头，你却莫名感到内心空荡荡
 
 &quot;罗伊！&quot;
 
-你听到有人叫你，抬起头对上威龙关切的目光]
+你听到有人叫你，抬起头对上威龙急切的目光]
 
 (else-if:$san is 90)[一切顺利的过头，你却莫名感到内心空荡荡
 
 &quot;罗伊！&quot;
 
-你听到有人叫你，抬起头对上威龙关切的目光]</tw-passagedata><tw-passagedata pid="22" name="前去看看" tags="wm" position="1750,175" size="100,100">越靠近那片草丛血腥味就更浓
+你听到有人叫你，抬起头对上威龙急切的目光]
+
+威龙的双手死死锢住你瘦弱的肩膀，力道大的让你忍不住发出一声痛呼
+
+&quot;啊抱歉抱歉&quot;威龙带着歉意的声音传来，肩膀上传来的力道减轻了不少，&quot;我只是听其他人说看到你一个人走出安全区了太担心了！你走了谁陪我唠嗑啊！&quot;
+
+你难得没接话，把怀里的药都塞进威龙怀里
+
+威龙下意识伸手去接，看清后发出一声惊呼
+
+&quot;这是？！你从哪弄来这些药的！&quot;
+
+你不轻不重锤了一下威龙的肩膀，后者配合着发出一声假的要死的痛呼
+
+&quot;嘿，你罗伊哥无所不能！服不服？&quot;
+
+&quot;服服服！罗伊哥你这真是雪中送炭！&quot;
+
+威龙抱着药一路跑到医疗区，还不忘回头朝你大声承诺下次抓野味来开小灶
+
+你有些疲惫，准备回去小憩时，一道声音从身后传来
+
+很耳熟
+
+&quot;你给威龙的药是从哪来的？&quot;
+
+[[回头]]</tw-passagedata><tw-passagedata pid="22" name="前去看看" tags="wm" position="1750,175" size="100,100">越靠近那片草丛血腥味就更浓
 
 你心中隐隐有了不好的预感
 
@@ -446,7 +472,19 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 (link-reveal-goto:&quot;补药哇我要看甜甜蛇蜂&quot;,&quot;前去看看&quot;)[(set:$wm_love to it +100)]
 
 
-(link-goto:&quot;我就要看血流成河ԅ(¯﹃¯ԅ)&quot;,&quot;离开&quot;)</tw-passagedata><tw-passagedata pid="26" name="离开" tags="" position="1850,300" size="100,100">逐渐弥漫的血腥味疯一般钻入你的鼻腔
+(link-goto:&quot;我就要看血流成河ԅ(¯﹃¯ԅ)&quot;,&quot;离开&quot;)
+
+(if:$san &lt; 50)[(t8n:&quot;fade&quot;)+(t8n-delay:1s)[(text-colour:red)[········]]
+
+(t8n:&quot;flicker&quot;)+(t8n-delay:2s)[(text-colour:red)[你不是](text-style:&quot;blurrier&quot;)[蜂医]]
+
+(t8n:&quot;rumble&quot;)+(t8n-delay:2.5s)[(text-colour:red)[你是谁]]
+
+(t8n:&quot;slide-up&quot;)+(t8n-delay:3s)[(size:3)[(text-colour:red)[你不是他]]]
+
+(t8n:&quot;shudder&quot;)+(t8n-delay:4s)+(t8n-time:5s)[(size:5)[(text-colour:red)[你不是他]]]
+
+(char-style:via(t8n-delay:pos*100)+(t8n:&#39;instant&#39;)+(t8n:&quot;pulse&quot;)+(t8n-time:10s))[(text-colour:red)[你到底是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁你是谁]]]</tw-passagedata><tw-passagedata pid="26" name="离开" tags="" position="1850,300" size="100,100">逐渐弥漫的血腥味疯一般钻入你的鼻腔
 
 你看出他战斗服上(text-colour:(hsl:90,0.8039,0.5,0.7))[哈夫克]的log
 
@@ -454,7 +492,7 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 也许是血液的味道过于刺鼻，或是在奔跑途中吸入了过多的烟尘，你的视线逐渐模糊，视野变成一片雪白
 
-(link-goto:&quot;努力睁眼&quot;,&quot;睁眼&quot;)(set:$san to it -30)</tw-passagedata><tw-passagedata pid="27" name="睁眼" tags="" position="2000,300" size="100,100">(if:$san is 70)[你不知何时跑到了药店
+(link-goto:&quot;努力睁眼&quot;,&quot;睁眼&quot;)(set:$san to it -30)</tw-passagedata><tw-passagedata pid="27" name="睁眼" tags="" position="1975,300" size="100,100">(if:$san is 70)[你不知何时跑到了药店
 
 消毒水的味道让你的大脑短暂获得清明，后知后觉发现自己做了什么
 
@@ -504,7 +542,7 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 (link-reveal-goto:&quot;继续&quot;,&quot;呕吐昏迷&quot;)[(set:$sl to 1)]]
 
-(else-if:$san is 50)[你拿到了药，却莫名感到一阵发慌
+(else-if:$san is 60)[你拿到了药，却莫名感到一阵发慌
 
 你总感觉你错过了什么
 
@@ -515,7 +553,7 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 [[回军营]]]
 
 
-</tw-passagedata><tw-passagedata pid="28" name="拖着士兵寻找稍微干净点的地方" tags="wm" position="2150,200" size="100,100"></tw-passagedata><tw-passagedata pid="29" name="前往药店" tags="wm" position="2075,75" size="100,100"></tw-passagedata><tw-passagedata pid="30" name="回去看看" tags="wm" position="2150,350" size="100,100">那人还躺在那，看上去似乎伤的很重</tw-passagedata><tw-passagedata pid="31" name="侧边栏" tags="header" position="525,50" size="100,100">(replace:?sidebar)[(size:0.7)[(link-undo:&quot;上一步&quot;)]
+</tw-passagedata><tw-passagedata pid="28" name="拖着士兵寻找稍微干净点的地方" tags="wm" position="2100,225" size="100,100"></tw-passagedata><tw-passagedata pid="29" name="前往药店" tags="wm" position="2100,100" size="100,100"></tw-passagedata><tw-passagedata pid="30" name="回去看看" tags="wm" position="2100,350" size="100,100">那人还躺在那，看上去似乎伤的很重</tw-passagedata><tw-passagedata pid="31" name="侧边栏" tags="header" position="525,50" size="100,100">(replace:?sidebar)[(size:0.7)[(link-undo:&quot;上一步&quot;)]
 
 (text-style:&quot;condense&quot;,&quot;buoy&quot;)[(size:0.5)[(text-style:&quot;strike&quot;,&quot;blur&quot;)[¿﹠﹪]:$san
 
@@ -527,7 +565,7 @@ $sl_love</tw-passagedata><tw-passagedata pid="5" name="为了安稳的睡眠，�
 
 (if:$wm is 1)[无名好感:$wm_love]]]]
 
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="32" name="回头" tags="hl" position="2000,0" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
